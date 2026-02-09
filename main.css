@@ -120,7 +120,6 @@ header {
 main {
   height: 80vh;
   padding: 20px 0px;
-  overflow-y: scroll;
 }
 
 
@@ -144,6 +143,7 @@ main .all-notes {
 
 .all-notes .note-list {
   margin-top: 20px;
+  overflow-y: scroll;
 }
 
 .note-list .note{
@@ -197,6 +197,7 @@ main .search-section{
 .search-section .search-list{
   background-color: red;
   padding: 1rem 0px;
+    overflow-y: scroll;
 }
 
 .search-list .search-item{
@@ -226,6 +227,10 @@ main .tags-section{
   color: var(--primary-dark);
   font-weight: 500;
   padding-bottom: 20px;
+}
+
+.tag-list{
+    overflow-y: scroll;
 }
 
 
@@ -265,6 +270,7 @@ main .archived-notes{
 
 .archived-notes .archived-note-list {
   margin-top: 20px;
+    overflow-y: scroll;
 }
 
 .archived-note-list .archived-note {
