@@ -41,7 +41,7 @@ body {
   text-transform: capitalize;
 }
 
-.hidden{
+.hidden {
   display: none;
 }
 
@@ -122,17 +122,18 @@ main {
   padding: 20px 0px;
 }
 
-
-
-
 /* main section -- all notes */
 main .all-notes {
-  /* background-color: aqua; */
+  background-color: aqua;
   width: 100%;
   height: 100%;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
 }
 
 .all-notes .note-type {
+  width: 100%;
   font-size: 1.2rem;
   font-weight: 600;
   text-transform: capitalize;
@@ -142,11 +143,14 @@ main .all-notes {
 }
 
 .all-notes .note-list {
+  width: 100%;
+  height: 100%;
+  background-color: red;
   margin-top: 20px;
   overflow-y: scroll;
 }
 
-.note-list .note{
+.note-list .note {
   border-radius: 10px;
   padding: 10px;
   border: 1px solid var(--secondary-dark);
@@ -157,27 +161,36 @@ main .all-notes {
   gap: 20px;
 }
 
-
-
+.all-notes .create-note-btn{
+  width: 100%;
+  padding: 10px 0px;
+  background-color: var(--accent-color);
+  color: var(--accent-light);
+  border: 0;
+  outline: 0;
+  border-radius: 5px;
+  margin-top: 5px;
+  font-size: 1.4rem;
+}
 
 /* main section -- search */
-main .search-section{
+main .search-section {
   /* background-color: red; */
   height: 100%;
   width: 100%;
 }
 
-.search-section .search-section-searchbar{
+.search-section .search-section-searchbar {
   padding: 10px;
   border: 1px solid lightgray;
   border-radius: 5px;
   gap: 5px;
 }
 
-.search-section-searchbar i{
+.search-section-searchbar i {
   font-size: 1.2rem;
 }
- 
+
 .search-section-searchbar input {
   height: 100%;
   width: 100%;
@@ -194,13 +207,13 @@ main .search-section{
   border-color: grey;
 }
 
-.search-section .search-list{
+.search-section .search-list {
   background-color: red;
   padding: 1rem 0px;
-    overflow-y: scroll;
+  overflow-y: scroll;
 }
 
-.search-list .search-item{
+.search-list .search-item {
   border-radius: 10px;
   padding: 10px;
   border: 1px solid var(--secondary-dark);
@@ -215,13 +228,12 @@ main .side-bar,
   background-color: firebrick;
 }
 
-
 /* main section -- tags */
-main .tags-section{ 
+main .tags-section {
   height: 100%;
 }
 
-.tags-section p{
+.tags-section p {
   text-transform: capitalize;
   font-size: 1.4rem;
   color: var(--primary-dark);
@@ -229,37 +241,36 @@ main .tags-section{
   padding-bottom: 20px;
 }
 
-.tag-list{
-    overflow-y: scroll;
+.tag-list {
+  overflow-y: scroll;
 }
 
-
-.tag-list .tag-item{
+.tag-list .tag-item {
   padding: 10px;
   transition: 0.6s;
 }
 
-.tag-list .tag-item:hover{
+.tag-list .tag-item:hover {
   background-color: var(--accent-light);
 }
 
-.tag-item i{
+.tag-item i {
   color: var(--accent-color);
   font-size: 1.2rem;
 }
 
-.tag-item span{
+.tag-item span {
   font-weight: 500;
   color: var(--secondary-dark);
   font-size: 1.2rem;
 }
 
 /* main section -- archived */
-main .archived-notes{
+main .archived-notes {
   height: 100%;
 }
 
-.archived-notes p{
+.archived-notes p {
   text-transform: capitalize;
   font-size: 1.4rem;
   color: var(--primary-dark);
@@ -267,10 +278,9 @@ main .archived-notes{
   padding-bottom: 20px;
 }
 
-
 .archived-notes .archived-note-list {
   margin-top: 20px;
-    overflow-y: scroll;
+  overflow-y: scroll;
 }
 
 .archived-note-list .archived-note {
@@ -284,21 +294,6 @@ main .archived-notes{
   gap: 20px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* bottom-nav section */
 .bottom-nav {
   border-top: 1px solid var(--secondary-dark);
@@ -309,7 +304,7 @@ main .archived-notes{
   /* gap: 10px; */
 }
 
-.bottom-nav .nav-btn{
+.bottom-nav .nav-btn {
   flex-direction: column;
   gap: 5px;
   padding: 5px;
@@ -321,58 +316,24 @@ main .archived-notes{
   border-radius: 5px;
 }
 
-.bottom-nav .nav-btn:hover{
+.bottom-nav .nav-btn:hover {
   background-color: var(--accent-light);
 }
 
-.bottom-nav .active-btn{
+.bottom-nav .active-btn {
   background-color: var(--accent-light);
 }
 
-.nav-btn p{
+.nav-btn p {
   text-transform: capitalize;
   font-size: 0.9rem;
   font-weight: 600;
 }
 
-.nav-btn i{
+.nav-btn i {
   color: var(--accent-color);
   font-size: 1.4rem;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media screen and (min-width: 1024px) {
   /* header, main{
