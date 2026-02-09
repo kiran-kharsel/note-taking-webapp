@@ -113,6 +113,7 @@ main {
   overflow-y: scroll;
 }
 
+/* main section -- all notes */
 main .all-notes {
   /* background-color: aqua; */
   width: 100%;
@@ -134,6 +135,53 @@ main .all-notes {
 }
 
 .note-list .note {
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid var(--secondary-dark);
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+/* main section -- search */
+main .search-section{
+  /* background-color: red; */
+  height: 100%;
+  width: 100%;
+}
+
+.search-section .search-section-searchbar{
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  gap: 5px;
+}
+
+.search-section-searchbar i{
+  font-size: 1.2rem;
+}
+ 
+.search-section-searchbar input {
+  height: 100%;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  padding: 0px 5px;
+  font-size: 1.1rem;
+  color: var(--secondary-dark);
+  border-bottom: 1px solid gray;
+}
+
+.search-section-searchbar:focus-within {
+  border-color: grey;
+}
+
+.search-section .search-list{
+  background-color: red;
+  padding: 1rem 0px;
+}
+
+.search-list .search-item{
   border-radius: 10px;
   padding: 10px;
   border: 1px solid var(--secondary-dark);
