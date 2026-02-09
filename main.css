@@ -41,6 +41,10 @@ body {
   text-transform: capitalize;
 }
 
+.hidden{
+  display: none;
+}
+
 /* reset elements */
 i {
   font-size: 1rem;
@@ -63,6 +67,7 @@ header {
   height: 10vh;
   font-size: 30px;
   justify-content: space-between;
+  border-bottom: 1px solid var(--secondary-dark);
 }
 
 .logo-container h3 {

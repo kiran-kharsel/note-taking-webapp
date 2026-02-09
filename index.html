@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./main.css">
     <script src="./main.js" defer></script>
 </head>
+
 <body>
     <header class="container flex">
         <div class="logo-container flex">
@@ -21,7 +25,7 @@
     </header>
     <main class="container">
         <div class="side-bar">side bar</div>
-        <div class="all-notes">
+        <div class="all-notes hidden">
             <p class="note-type">all notes</p>
             <ul class="note-list">
                 <li class="note">
@@ -43,6 +47,20 @@
                 </li>
             </ul>
         </div>
+
+        <div class="search-section">
+            <div class="search-section-searchbar flex">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" class="search-input">
+            </div>
+            <ul class="search-list">
+                <li class="search-item">
+
+                </li>
+            </ul>
+        </div>
+
+
         <div class="note-editor">note editor</div>
     </main>
     <div class="container flex bottom-nav">
@@ -64,4 +82,5 @@
         </button>
     </div>
 </body>
+
 </html>
