@@ -160,7 +160,7 @@ main .all-notes {
   gap: 20px;
 }
 
-.all-notes .create-note-btn{
+.all-notes .create-note-btn {
   order: 3;
   width: 100%;
   padding: 10px 0px;
@@ -292,6 +292,44 @@ main .archived-notes {
   gap: 20px;
 }
 
+/* main section -- sidebar */
+main .side-bar {
+  display: none;
+  width: 20%;
+  padding: 0px 10px;
+  flex-direction: column;
+  align-items: start;
+  gap: 20px;
+}
+
+.side-bar .sidebar-btns{
+  padding-bottom: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-bottom: 1px solid var(--secondary-dark);
+}
+
+.sidebar-btns button{
+  font-size: 1.2rem;
+  padding: 10px 0px;
+  border: 0;
+  outline: 0;
+  background-color: lightgray;
+  border-radius: 5px;
+  text-transform: capitalize;
+}
+
+
+/* main section -- note editor */
+main .note-editor {
+  display: none;
+  background-color: yellow;
+  width: 50%;
+  padding: 0px 10px;
+}
+
 /* bottom-nav section */
 .bottom-nav {
   border-top: 1px solid var(--secondary-dark);
@@ -334,44 +372,37 @@ main .archived-notes {
 }
 
 @media screen and (min-width: 1024px) {
-  
-
   main {
     display: flex;
     height: 90vh;
   }
 
-  main .all-notes{
+  main .all-notes {
     width: 30%;
-    background-color: saddlebrown;
     padding: 0px 10px;
+    border-left: 1px solid var(--secondary-dark);
+    border-right: 1px solid var(--secondary-dark);
   }
 
-  .all-notes .create-note-btn{
+  .all-notes .create-note-btn {
     order: 1;
     margin-bottom: 15px;
   }
 
-  .all-notes .note-type{
+  .all-notes .note-type {
     order: 2;
   }
 
-  .all-notes .note-list{
+  .all-notes .note-list {
     order: 3;
   }
 
-  main .side-bar{
+  main .side-bar {
     display: flex;
-    background-color: yellow;
-    width: 20%;
-    padding: 0px 10px;
   }
 
-  main .note-editor{
+  main .note-editor {
     display: flex;
-    background-color: yellow;
-    width: 50%;
-    padding: 0px 10px;
   }
 
   .bottom-nav {
