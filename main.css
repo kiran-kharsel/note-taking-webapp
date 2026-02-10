@@ -124,7 +124,6 @@ main {
 
 /* main section -- all notes */
 main .all-notes {
-  background-color: aqua;
   width: 100%;
   height: 100%;
   flex-direction: column;
@@ -133,20 +132,20 @@ main .all-notes {
 }
 
 .all-notes .note-type {
+  order: 1;
   width: 100%;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   font-weight: 600;
   text-transform: capitalize;
   color: var(--primary-dark);
-  padding-bottom: 15px;
-  border-bottom: 1px solid var(--secondary-dark);
+  padding-bottom: 10px;
 }
 
 .all-notes .note-list {
+  order: 2;
   width: 100%;
   height: 100%;
   background-color: red;
-  margin-top: 20px;
   overflow-y: scroll;
 }
 
@@ -162,6 +161,7 @@ main .all-notes {
 }
 
 .all-notes .create-note-btn{
+  order: 3;
   width: 100%;
   padding: 10px 0px;
   background-color: var(--accent-color);
@@ -224,8 +224,6 @@ main .search-section {
 main .side-bar,
 .note-editor {
   display: none;
-  font-size: 40px;
-  background-color: firebrick;
 }
 
 /* main section -- tags */
@@ -336,18 +334,44 @@ main .archived-notes {
 }
 
 @media screen and (min-width: 1024px) {
-  /* header, main{
-        
-    } */
+  
 
   main {
     display: flex;
     height: 90vh;
   }
 
-  main .side-bar,
-  .note-editor {
+  main .all-notes{
+    width: 30%;
+    background-color: saddlebrown;
+    padding: 0px 10px;
+  }
+
+  .all-notes .create-note-btn{
+    order: 1;
+    margin-bottom: 15px;
+  }
+
+  .all-notes .note-type{
+    order: 2;
+  }
+
+  .all-notes .note-list{
+    order: 3;
+  }
+
+  main .side-bar{
     display: flex;
+    background-color: yellow;
+    width: 20%;
+    padding: 0px 10px;
+  }
+
+  main .note-editor{
+    display: flex;
+    background-color: yellow;
+    width: 50%;
+    padding: 0px 10px;
   }
 
   .bottom-nav {
