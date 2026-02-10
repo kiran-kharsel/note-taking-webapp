@@ -63,14 +63,7 @@
                     <p class="date">19 Oct 2028</p>
                 </li>
 
-                <li class="note">
-                    <h3>react performance optimization</h3>
-                    <div class="tags">
-                        <span class="tag">dev</span>
-                        <span class="tag">react</span>
-                    </div>
-                    <p class="date">19 Oct 2028</p>
-                </li>
+                
             </ul>
 
             <button class="create-note-btn">+ create new note</button>
@@ -127,8 +120,7 @@
             <div class="editor flex">
                 <div class="editor-inputs">
                     <div>
-                        <!-- <input type="text"  id="input-title"> -->
-                        <textarea name="" placeholder="Enter title..." id="input-title"></textarea>
+                        <textarea required ="title" placeholder="Enter title..." id="input-title"></textarea>
                     </div>
                     <div>
                         <label for="input-tags">
@@ -139,13 +131,13 @@
                     </div>
                     <div>
                         <label for="input-date">
-                            <i class="fa-solid fa-tag"></i>
+                            <i class="fa-solid fa-clock"></i>
                             <span>Last edited</span>
                         </label>
-                        <input type="date" placeholder="Enter date..." id="input-date">
+                        <input required type="date" placeholder="Enter date..." id="input-date">
                     </div>
                     <div>
-                        <textarea name="main-textarea" id="main-textarea" placeholder="write notes..."></textarea>
+                        <textarea required name="main-textarea" id="main-textarea" placeholder="write notes..."></textarea>
                     </div>
                     
                 </div>
