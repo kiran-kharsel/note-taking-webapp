@@ -123,11 +123,12 @@
             </ul>
         </div>
 
-        <div class="note-editor">
-            <div class="editor">
+        <div class="note-editor flex">
+            <div class="editor flex">
                 <div class="editor-inputs">
                     <div>
-                        <input type="text" placeholder="Enter title..." class="input-title">
+                        <!-- <input type="text"  id="input-title"> -->
+                        <textarea name="" placeholder="Enter title..." id="input-title"></textarea>
                     </div>
                     <div>
                         <label for="input-tags">
@@ -141,14 +142,17 @@
                             <i class="fa-solid fa-tag"></i>
                             <span>Last edited</span>
                         </label>
-                        <input type="date" placeholder="Enter date..." id="input-tags">
+                        <input type="date" placeholder="Enter date..." id="input-date">
                     </div>
                     <div>
                         <textarea name="main-textarea" id="main-textarea" placeholder="write notes..."></textarea>
                     </div>
                     
                 </div>
-                <div class="editor-btns"></div>
+                <div class="editor-btns">
+                    <button>save</button>
+                <button>cancel</button>
+                </div>
             </div>
             <div class="editor-btns">
                 <button>archive note</button>

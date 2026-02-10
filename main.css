@@ -22,7 +22,7 @@ body {
 /* utility class */
 .container {
   width: 90%;
-  max-width: 1024px;
+  max-width: 1280px;
   margin-inline: auto;
 }
 
@@ -325,9 +325,69 @@ main .side-bar {
 /* main section -- note editor */
 main .note-editor {
   display: none;
-  width: 50%;
+  width: 60%;
   padding: 0px 10px;
+  align-items: start;
+  gap: 20px;
 }
+
+.note-editor .editor{
+  background-color: lightblue;
+  flex: 2;
+  height: 100%;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.editor-inputs{
+  width: 100%;
+}
+
+.editor-inputs input, textarea{
+  border: 0;
+  outline: 0;
+  background: transparent;
+}
+
+.editor-inputs #input-title{
+  width: 100%;
+  border-bottom: 1px solid lightgrey;
+  font-size: 30px;
+  background-color: red;
+  min-height: 60px;   
+  max-height: 300px;   
+  resize: vertical;    
+  overflow-y: auto;
+}
+
+.editor-inputs i{
+  color: var(--accent-color);
+}
+
+.editor-inputs input{
+  margin: 10px 0px;
+  margin-left: 20px;
+  border-bottom: 1px solid grey;
+  width: 200px;
+}
+
+.editor-inputs #main-textarea{
+  width: 100%;
+  font-size: 1rem;
+  background-color: red;
+  min-height: 60px;   
+  height: 550px;   
+  resize: vertical;    
+  overflow-y: auto;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.editor-inputs #main-textarea::-webkit-scrollbar{
+  display: none;
+}
+
 
 /* bottom-nav section */
 .bottom-nav {
@@ -390,7 +450,7 @@ main .note-editor {
   }
 
   main .all-notes {
-    width: 30%;
+    width: 20%;
     padding: 0px 10px;
     border-left: 1px solid var(--secondary-dark);
     border-right: 1px solid var(--secondary-dark);
