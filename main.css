@@ -325,7 +325,6 @@ main .side-bar {
 /* main section -- note editor */
 main .note-editor {
   display: none;
-  background-color: yellow;
   width: 50%;
   padding: 0px 10px;
 }
@@ -370,6 +369,19 @@ main .note-editor {
   color: var(--accent-color);
   font-size: 1.4rem;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (min-width: 1024px) {
   main {
