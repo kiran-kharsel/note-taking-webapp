@@ -10,7 +10,7 @@ let notes = [];
 
 saveNoteBtn.addEventListener("click", function () {
   let title = titleInput.value;
-  let tags = tagsInput.value.split(',').map(item => item.trim());;
+  let tags = tagsInput.value
   let desc = descInput.value;
 
   const noteObj = {
@@ -39,7 +39,8 @@ function renderList(list) {
     const li = document.createElement("li");
     li.className = "note flex";
 
-    console.log(item.tags)
+    //convr tags into arrray
+    const tags = item.tags.split(',').map(item => item.trim());
     
     li.innerHTML = `
         <h3>${item.title}</h3>
@@ -49,13 +50,19 @@ function renderList(list) {
         `;
 
     //create tags
-    item.tags.forEach((tag) => {
+    tags.forEach((tag) => {
         const span = document.createElement("span");
         span.className = 'tag';
         span.innerHTML = tag;
         li.querySelector('.tags').appendChild(span)
     });
 
+    li.addEventListener('click', function(){
+        console.log('ok')
+        titleInput.value = item.title;
+        descInput.value = item.desc;
+        tagsInput.value = item.tags
+    })
 
     allNoteList.appendChild(li);
   });
