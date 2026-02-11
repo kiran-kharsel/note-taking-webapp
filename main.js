@@ -46,7 +46,7 @@ function renderList(list) {
   
   let date = formatDate()
 
-  list.forEach((item, index) => {
+  list.forEach((item) => {
     const li = document.createElement("li");
     li.className = "note flex";
 
@@ -109,5 +109,21 @@ function renderTags(tags){
     tagListElem.appendChild(li);
 
     // show tag filtered notes
+    li.addEventListener('click', function(){
+      // filterbytags
+      filterByTagName(tag)
+    })
   })
+}
+
+// filter by tags
+function filterByTagName(tag){
+  console.log(tag)
+  // filter list
+  const filteredNotes = notes.filter((note) => {
+    return note.tags.includes(tag)
+  })
+
+  // render list
+  renderList(filteredNotes)
 }
