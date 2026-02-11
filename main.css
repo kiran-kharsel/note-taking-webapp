@@ -332,12 +332,13 @@ main .note-editor {
 }
 
 .note-editor .editor{
-  background-color: lightblue;
+  /* background-color: lightblue; */
   flex: 2;
   height: 100%;
   flex-direction: column;
   align-items: start;
   justify-content: space-between;
+  border-right: 1px solid var(--secondary-dark);
 }
 
 .editor-inputs{
@@ -354,7 +355,7 @@ main .note-editor {
   width: 100%;
   border-bottom: 1px solid lightgrey;
   font-size: 30px;
-  background-color: red;
+  /* background-color: red; */
   min-height: 60px;   
   max-height: 300px;   
   resize: vertical;    
@@ -373,9 +374,10 @@ main .note-editor {
 }
 
 .editor-inputs #main-textarea{
+  border-top: 1px solid var(--secondary-dark);
   width: 100%;
   font-size: 1rem;
-  background-color: red;
+  /* background-color: red; */
   min-height: 60px;   
   height: 550px;   
   resize: vertical;    
