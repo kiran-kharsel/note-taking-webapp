@@ -10,12 +10,13 @@ let notes = [];
 
 saveNoteBtn.addEventListener("click", function () {
   let title = titleInput.value;
-  let tags = tagsInput.value;
+  let tags = tagsInput.value.split(',').map(item => item.trim());;
   let desc = descInput.value;
 
   const noteObj = {
     title,
     desc,
+    tags
   };
 
   notes.unshift(noteObj);
@@ -37,14 +38,25 @@ function renderList(list) {
   list.forEach((item) => {
     const li = document.createElement("li");
     li.className = "note flex";
+
+    console.log(item.tags)
+    
     li.innerHTML = `
         <h3>${item.title}</h3>
         <div class="tags">
-            <span class="tag">dev</span>
-            <span class="tag">react</span>
         </div>
         <p class="date">${date}</p>
         `;
+
+    //create tags
+    item.tags.forEach((tag) => {
+        const span = document.createElement("span");
+        span.className = 'tag';
+        span.innerHTML = tag;
+        li.querySelector('.tags').appendChild(span)
+    });
+
+
     allNoteList.appendChild(li);
   });
 }
