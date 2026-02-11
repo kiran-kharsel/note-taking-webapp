@@ -5,8 +5,13 @@ const descInput = document.querySelector("#main-textarea");
 const saveNoteBtn = document.querySelector(".save-note");
 
 const allNoteList = document.querySelector(".note-list");
+const tagListElem = document.querySelector('.tag-list')
 
+// arrays
 let notes = [];
+let tagsArray = [];
+
+
 
 saveNoteBtn.addEventListener("click", function () {
   let title = titleInput.value;
@@ -24,6 +29,12 @@ saveNoteBtn.addEventListener("click", function () {
   // fn to render list
   renderList(notes);
 
+  //convert tags into arrray
+  const alltags = noteObj.tags.split(',').map(tag => tag.trim().toLowerCase());
+  tagsArray = [...alltags, ...tagsArray]
+  renderTags(tagsArray)
+
+
   //reset values of inputs
   titleInput.value = "";
   tagsInput.value = "";
@@ -35,12 +46,13 @@ function renderList(list) {
   
   let date = formatDate()
 
-  list.forEach((item) => {
+  list.forEach((item, index) => {
     const li = document.createElement("li");
     li.className = "note flex";
 
-    //convr tags into arrray
-    const tags = item.tags.split(',').map(item => item.trim());
+    // //convert tags into arrray
+    const alltags = item.tags.split(',').map(tag => tag.trim().toLowerCase());
+    // tagsArray = [...alltags]
     
     li.innerHTML = `
         <h3>${item.title}</h3>
@@ -50,7 +62,7 @@ function renderList(list) {
         `;
 
     //create tags
-    tags.forEach((tag) => {
+    alltags.forEach((tag) => {
         const span = document.createElement("span");
         span.className = 'tag';
         span.innerHTML = tag;
@@ -61,7 +73,7 @@ function renderList(list) {
         console.log('ok')
         titleInput.value = item.title;
         descInput.value = item.desc;
-        tagsInput.value = item.tags
+        tagsInput.value = item.tags;
     })
 
     allNoteList.appendChild(li);
@@ -77,4 +89,25 @@ function formatDate() {
   const day = currentDate.getDate();
 
   return `${day}/${month}/${year}`;
+}
+
+
+// render tags
+function renderTags(tags){
+  console.log(tags)
+  // filter out duplicate elements
+  const filteredTags = [...new Set(tags)]
+
+  tagListElem.innerHTML = '';
+  filteredTags.forEach((tag) => {
+    let li = document.createElement('li')
+    li.className = 'tag-item';
+    li.innerHTML = `
+    <i class="fa-solid fa-tag"></i>
+    <span class="tag-name">${tag}</span>
+    `;
+    tagListElem.appendChild(li);
+
+    // show tag filtered notes
+  })
 }
