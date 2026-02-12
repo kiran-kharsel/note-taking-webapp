@@ -10,6 +10,7 @@ const tagListElem = document.querySelector('.tag-list')
 // arrays
 let notes = [];
 let tagsArray = [];
+let noteEditId = null;
 
 
 
@@ -17,14 +18,30 @@ saveNoteBtn.addEventListener("click", function () {
   let title = titleInput.value;
   let tags = tagsInput.value
   let desc = descInput.value;
+  const noteId = Math.floor(Math.random() * (1000000 - 0 + 1)) + 0;
 
   const noteObj = {
     title,
     desc,
-    tags
+    tags,
+    noteId
   };
 
-  notes.unshift(noteObj);
+  //check for editing note
+  if(noteEditId !== null){
+    notes.forEach((note) => {
+      if(note.noteId === noteEditId){
+        note.title = title;
+        note.desc = desc;
+        note.tags = tags;
+        note.noteId = noteId;
+        noteEditId = null;
+      }
+    })
+  } else{
+    notes.unshift(noteObj);
+  }
+ 
 
   // fn to render list
   renderList(notes);
@@ -70,15 +87,27 @@ function renderList(list) {
     });
 
     li.addEventListener('click', function(){
-        console.log('ok')
-        titleInput.value = item.title;
-        descInput.value = item.desc;
-        tagsInput.value = item.tags;
+        // edit note
+        editNote(item)
     })
 
     allNoteList.appendChild(li);
   });
+};
+
+
+// edi note
+function editNote(noteObj){
+  titleInput.value = noteObj.title;
+  tagsInput.value = noteObj.tags
+  descInput.value = noteObj.desc
+  noteEditId = noteObj.noteId;
 }
+
+
+
+
+
 
 // format date
 function formatDate() {
