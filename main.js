@@ -4,6 +4,8 @@ const tagsInput = document.querySelector("#input-tags");
 const descInput = document.querySelector("#main-textarea");
 const saveNoteBtn = document.querySelector(".save-note");
 const cancelNoteBtn = document.querySelector(".cancel-note");
+const archiveNoteBtn = document.querySelector(".archive-note");
+const deleteNoteBtn = document.querySelector(".delete-note");
 
 const allNoteList = document.querySelector(".note-list");
 const tagListElem = document.querySelector('.tag-list')
@@ -121,7 +123,21 @@ function cancelUpdatedNote(){
   descInput.value = "";
 }
 
+// delete note
+deleteNoteBtn.addEventListener('click', function(){
+  // get id, filter notes, render list, null-id
+  notes = notes.filter((note) => note.noteId !== noteEditId)
+  renderList(notes)
+  noteEditId = null;
 
+  // clean editor
+  titleInput.value = "";
+  tagsInput.value = "";
+  descInput.value = "";
+})
+
+
+// archive note
 
 
 
