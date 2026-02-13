@@ -12,6 +12,7 @@ const tagListElem = document.querySelector('.tag-list')
 
 // arrays
 let notes = [];
+let archivedNotes = [];
 let tagsArray = [];
 let noteEditId = null;
 
@@ -138,7 +139,14 @@ deleteNoteBtn.addEventListener('click', function(){
 
 
 // archive note
-
+archiveNoteBtn.addEventListener('click', function(){
+  // get id of obj, create a archivelist, push to it, remove from all notes, render all-notes
+  let archivedNote  = notes.filter((note) => note.noteId === noteEditId)
+  console.log(archivedNote)
+  archivedNote.push(...archivedNote)
+  notes = notes.filter((note) => note.noteId !== noteEditId)
+  renderList(notes)
+})
 
 
 // format date
