@@ -10,12 +10,20 @@ const deleteNoteBtn = document.querySelector(".delete-note");
 const allNoteList = document.querySelector(".note-list");
 const tagListElem = document.querySelector('.tag-list')
 
+const allnoteListBtn =document.querySelector('.allnote-list-btn')
+const archivedListBtn = document.querySelector('.archived-list-btn')
+
 // arrays
 let notes = [];
 let archivedNotes = [];
 let tagsArray = [];
 let noteEditId = null;
 
+
+archivedListBtn.addEventListener('click', function(){
+  console.log(archivedNotes)
+  renderList(archivedNotes)
+})
 
 
 saveNoteBtn.addEventListener("click", function () {
@@ -106,6 +114,8 @@ function editNote(noteObj){
   tagsInput.value = noteObj.tags
   descInput.value = noteObj.desc
   noteEditId = noteObj.noteId;
+
+  // show cancel and archive btn if edit byn press
 }
 
 
@@ -143,9 +153,14 @@ archiveNoteBtn.addEventListener('click', function(){
   // get id of obj, create a archivelist, push to it, remove from all notes, render all-notes
   let archivedNote  = notes.filter((note) => note.noteId === noteEditId)
   console.log(archivedNote)
-  archivedNote.push(...archivedNote)
+  archivedNotes.push(...archivedNote)
   notes = notes.filter((note) => note.noteId !== noteEditId)
   renderList(notes)
+  noteEditId = null;
+  // clean editor
+  titleInput.value = "";
+  tagsInput.value = "";
+  descInput.value = "";
 })
 
 
