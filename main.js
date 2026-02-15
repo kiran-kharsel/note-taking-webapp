@@ -101,6 +101,9 @@ function renderList(list) {
     li.addEventListener('click', function(){
         // edit note
         editNote(item)
+        // show archive and delete btns
+        // console.log(document.querySelector('.editor-btns'))
+        document.querySelector('.editor-action-btns').classList.remove('hidden')
     })
 
     allNoteList.appendChild(li);
