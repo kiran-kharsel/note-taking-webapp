@@ -68,6 +68,8 @@ saveNoteBtn.addEventListener("click", function () {
   titleInput.value = "";
   tagsInput.value = "";
   descInput.value = "";
+
+  document.querySelector('.editor-action-btns').classList.add('hidden')
 });
 
 function renderList(list) {
