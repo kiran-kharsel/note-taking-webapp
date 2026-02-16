@@ -145,7 +145,6 @@ main .all-notes {
   order: 2;
   width: 100%;
   height: 100%;
-  background-color: red;
   overflow-y: scroll;
 }
 
@@ -458,10 +457,6 @@ main .note-editor {
     border-right: 1px solid var(--secondary-dark);
   }
 
-  .all-notes .create-note-btn {
-    order: 1;
-    margin-bottom: 15px;
-  }
 
   .all-notes .note-type {
     order: 2;
@@ -469,6 +464,10 @@ main .note-editor {
 
   .all-notes .note-list {
     order: 3;
+  }
+
+  .create-note-btn{
+    display: none;
   }
 
   main .side-bar {
