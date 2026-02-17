@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+*::-webkit-scrollbar{
+  display: none;
+}
+
 :root {
   --accent-color: #0092ca;
   --accent-light: #c8dee9;
